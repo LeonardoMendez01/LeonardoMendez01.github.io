@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap');
+/* Establece la altura mínima y máxima del cuerpo a 300rem (300 veces el tamaño de la fuente actual) */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 45rem;
+    font-family: 'Gabarito', cursive; /* Fuente de texto */
+    background-image: url("/imagenes/FondoWeb.webp"); /* Imagen de fondo */
+    background-size: cover; /* Escala la imagen de fondo para cubrir todo el cuerpo */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo */
+    background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el contenido */
+}
+.h1logincarrito{
+    color: white;
+    font-size: 5vh;
+    font-weight: 900;
+    background-color: black;
+    padding: 15vh;
+    margin-right: 1vh;
+    max-width: 30%;
+}
+/* Estilo general del footer */
+footer {
+    text-align: center; /* Alinea el texto al centro horizontalmente */
+    justify-content: center; /* Centra horizontalmente el contenido (aunque esto generalmente se usa para elementos flexbox) */
+    align-items: center; /* Centra verticalmente el contenido */
+    background-color: black; /* Color de fondo */
+    color: #a7a7a7; /* Color de texto */
+    font-size: 16px; /* Tamaño de fuente */
+    display: flex; /* Usa el modelo de caja flexible */
+    position: bottom; /* Esto no es válido, debería ser "position: fixed" o "position: absolute" */
+    transition: top 0.6s; /* Transición del valor 'top' para animaciones (aunque 'top' no está definido aquí) */
+    z-index: 1000; /* Capa z para posicionamiento */
+    bottom: 0; /* Posiciona el footer en la parte inferior */
+    left: 0;
+    right: 0;
+    padding-bottom: 100px; /* Espaciado inferior */
+}
+
+/* Establece propiedades generales para todos los elementos dentro del footer */
+footer * {
+    font-family: "Poppins", sans-serif; /* Fuente de texto */
+    box-sizing: border-box; /* Modelo de caja de borde */
+    border: none; /* Elimina bordes */
+    outline: none; /* Elimina el borde de enfoque */
+}
+
+/* Establece el espaciado para las filas */
+.row {
+    padding: 1em 1em;
+}
+
+/* Elimina los puntos (viñetas) de las listas no ordenadas */
+ul {
+    list-style: none;
+}
+
+/* Establece el diseño de cuadrícula de la fila primaria */
+.row.primary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+}
+
+/* Establece el estilo de las columnas */
+.column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-height: 15em;
+    margin-right: 0px; /* Margen derecho establecido en 0px */
+}
+
+/* Establece el margen derecho para los elementos li (elementos de lista) */
+li {
+    margin-right: 40px;
+}
+
+/* Establece el estilo para el encabezado h3 */
+h3 {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 1.4em;
+    white-space: nowrap;
+}
+
+/* Estilo para el párrafo dentro de la clase "about" */
+.about p {
+    text-align: justify;
+    line-height: 2;
+    margin: 0;
+}
+
+/* Establece el estilo para los input y botones */
+input,
+button {
+    font-size: 1em;
+    padding: 1em;
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Estilo para los botones */
+button {
+    background-color: #FD8112;
+    color: #ffffff;
+}
+
+/* Establece el estilo para los elementos dentro de la clase "social" */
+div.social {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2.4em;
+    flex-direction: row;
+    margin-top: 0.5em;
+}
+
+/* Establece el color para los iconos sociales */
+.social i {
+    color: #bac6d9;
+}
+
+/* Estilo para el menú del footer */
+.footer-menu {
+    display: flex;
+    text-align: center; /* Alinea el texto al centro horizontalmente */
+}
+
+/* Estilo para los elementos "a" dentro del menú del footer */
+.footer-menu a {
+    display: inline-block; /* Cambia la visualización a "inline-block" */
+    margin-right: 10px; /* Agrega un margen derecho para separar los elementos */
+    color: #cfd2d6; /* Color del texto */
+    text-decoration: none; /* Elimina la decoración de texto */
+}
+
+/* Establece el estilo para el último elemento "a" dentro del menú del footer */
+.footer-menu a:last-child {
+    margin-bottom: 0; /* Elimina el margen inferior del último elemento */
+    margin-right: 0; /* Elimina el margen derecho del último elemento para que estén igualmente espaciados */
+}
+
+/* Estilo al hacer hover sobre los elementos "a" del menú del footer */
+.footer-menu a:hover {
+    color: #27bcda; /* Cambia el color del texto al hacer hover */
+}
+
+
+/* Media query que aplica reglas de estilo cuando el ancho de la pantalla es menor o igual a 850px */
+@media screen and (max-width: 850px) {
+    /* Cambia el diseño de la clase "row.primary" para que tenga una sola columna en lugar de cuatro */
+    .row.primary {
+      grid-template-columns: 1fr;
+    }
+}
+
+/* Estilo para la barra de navegación en el encabezado */
+/* Inicio Barra de navegación */
+header {
+    background-color: black; /* Fondo negro */
+    color: black; /* Color de texto negro (esto puede ser un error, ya que el color de texto negro en un fondo negro no será visible) */
+    position: fixed; /* Fija la posición en la parte superior de la página */
+    transition: top 0.6s; /* Transición de la propiedad 'top' para animación */
+    z-index: 1000; /* Capa z para superponer otros elementos */
+    top: 0; /* Coloca la barra de navegación en la parte superior de la ventana */
+    left: 0;
+    right: 0;
+    display: flex; /* Establece la visualización como flexbox */
+    flex-direction: column; /* Cambia la dirección de flexbox a columna */
+    align-items: center; /* Alinea los elementos al centro horizontalmente */
+}
+
+
+/* Estilo para la parte superior de la barra de navegación */
+.navbar-top {
+    color: #fff; /* Establece el color de texto en blanco */
+    display: flex; /* Utiliza el modelo de caja flexible para el elemento */
+    justify-content: center; /* Centra horizontalmente el contenido en la barra de navegación */
+    align-items: center; /* Centra verticalmente el contenido en la barra de navegación */
+    padding: 1px; /* Agrega un pequeño espaciado alrededor del elemento */
+    width: 100%; /* Hace que la barra de navegación ocupe todo el ancho disponible en la pantalla */
+}
+
+/* Estilo para el logo dentro de la barra de navegación */
+.logo img {
+    margin-top: 10px; /* Establece un margen superior de 10px para el logo */
+    max-width: 100%; /* La imagen no se dimensionará más allá de su tamaño original */
+    height: 80px; /* La altura de la imagen se ajustará automáticamente para mantener la proporción */
+    margin: 0 auto; /* Centra el logo horizontalmente dentro de su contenedor */
+    display: block; /* Evita que haya espacio adicional debajo de la imagen del logo */
+    margin-top: 5px; /* Agrega un margen superior adicional de 5px */
+    margin-right: 65px; /* Establece un margen derecho de 65px para el logo */
+}
+
+/* Estilo para la barra de búsqueda en la barra de navegación */
+.search-bar {
+    border-radius: 15px; /* Establece un borde redondeado para la barra de búsqueda */
+    display: flex; /* Utiliza el modelo de caja flexible para el elemento */
+    align-items: center; /* Centra verticalmente la barra de búsqueda en la barra de navegación */
+    margin-top: 10px; /* Agrega un margen superior de 10px para separar la barra de búsqueda de la parte superior de la barra de navegación */
+    justify-content: center; /* Centra horizontalmente la barra de búsqueda en la barra de navegación */
+}
+
+/* Estilo para el campo de entrada de la barra de búsqueda */
+.search-bar input {
+    padding: 15px; /* Establece un relleno de 15px para el campo de entrada */
+    border: none; /* Elimina los bordes del campo de entrada */
+    border-radius: 5px; /* Establece un borde redondeado para el campo de entrada */
+    width: 90vh; /* Establece el ancho del campo de entrada al 90% del alto de la ventana (viewport height) */
+}
+
+/* Estilo para el botón de búsqueda en la barra de navegación */
+.search-bar button {
+    background-color: rgba(167, 139, 250); /* Establece el color de fondo del botón */
+    border: none; /* Elimina los bordes del botón */
+    border-radius: 5px; /* Establece un borde redondeado para el botón */
+    padding: 15px; /* Establece un relleno de 15px para el botón */
+    cursor: pointer; /* Cambia el cursor al puntero al pasar por encima del botón */
+    margin: 5px; /* Establece un margen de 5px alrededor del botón */
+    width: 20vh; /* Establece el ancho del botón al 20% del alto de la ventana (viewport height) */
+}
+
+/* Estilo para la lista no ordenada (ul) en la barra de navegación */
+.navbar-bottom ul {
+    list-style-type: none; /* Elimina los puntos de lista de la lista no ordenada */
+    margin: 0; /* Elimina el margen exterior de la lista */
+    padding: 0; /* Elimina el relleno de la lista */
+    display: flex; /* Utiliza el modelo de caja flexible para la lista */
+}
+
+/* Estilo para los elementos de la lista (li) en la barra de navegación */
+.navbar-bottom ul li {
+    margin-top: 20px; /* Establece un margen superior de 20px para los elementos de la lista */
+    margin-right: 60px; /* Establece un margen derecho de 60px entre los elementos de la lista */
+}
+
+/* Estilo para el último elemento de la lista (li) en la barra de navegación */
+.navbar-bottom ul li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento de la lista */
+    margin-bottom: 4vh; /* Establece un margen inferior de 4vh para el último elemento de la lista */
+}
+
+/* Estilo para los enlaces (a) dentro de los elementos de la lista en la barra de navegación */
+.navbar-bottom ul li a {
+    color: #fff; /* Establece el color de texto en blanco para los enlaces */
+    text-decoration: none; /* Elimina la decoración de texto para los enlaces */
+}
+/* Fin Barra de navegación */
+
+.form-container {
+    position: relative;
+    margin-right:10vh;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    border-radius: 0.75rem;
+    background-color: black;
+    border: 1px solid white;
+    padding: 1rem;
+    color: rgba(243, 244, 246, 1);
+}
+  
+.title {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+  
+.form {
+    display: flex;
+    flex-direction: column;
+}
+  
+  .input-group {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .input-group label {
+    display: block;
+    color: rgba(156, 163, 175, 1);
+    margin-bottom: 4px;
+  }
+  
+  .input-group input {
+    width: 90%;
+    border-radius: 0.375rem;
+    border: 1px solid rgba(55, 65, 81, 1);
+    outline: 0;
+    background-color: rgba(17, 24, 39, 1);
+    padding: 0.75rem 1rem;
+    color: rgba(243, 244, 246, 1);
+  }
+  
+  .input-group input:focus {
+    border-color: rgba(167, 139, 250);
+  }
+  
+  .forgot {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: rgba(156, 163, 175,1);
+    margin: 8px 0 14px 0;
+  }
+  
+  .forgot a,.signup a {
+    color: rgba(243, 244, 246, 1);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .forgot a:hover, .signup a:hover {
+    text-decoration: underline rgba(167, 139, 250, 1);
+  }
+  
+  .sign {
+    display: block;
+    width: 100%;
+    background-color: rgba(167, 139, 250, 1);
+    padding: 0.75rem;
+    text-align: center;
+    color: rgba(17, 24, 39, 1);
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 600;
+  }
+  
+  .social-message {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+  }
+  
+  .line {
+    height: 1px;
+    flex: 1 1 0%;
+    background-color: rgba(55, 65, 81, 1);
+  }
+  
+  .social-message .message {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgba(156, 163, 175, 1);
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icons .icon {
+    border-radius: 0.125rem;
+    padding: 0.75rem;
+    border: none;
+    background-color: transparent;
+    margin-left: 8px;
+  }
+  
+  .social-icons .icon svg {
+    height: 1.25rem;
+    width: 1.25rem;
+    fill: #fff;
+  }
+  
+  .signup {
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: rgba(156, 163, 175, 1);
+  }
+  
+  /* Estilos para el contenedor principal del formulario */
+.contenedor-formulario {
+  width: 350px;
+  height: 550px;
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  border: 1px solid white;
+  margin-top: 10vh;
+}
+
+/* Estilos para el título del formulario */
+.titulo {
+  text-align: center;
+  margin: 10px 0 30px 0;
+  font-size: 28px;
+  font-weight: 1000;
+  color: #fff;
+}
+
+/* Estilos para el subtítulo del formulario */
+.subtitulo {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 9px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* Estilos para el formulario en sí */
+.formulario {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+/* Estilos para los campos de entrada */
+.entrada {
+  border-radius: 20px;
+  border: 1px solid #c0c0c0;
+  outline: 0 !important;
+  box-sizing: border-box;
+  padding: 12px 15px;
+}
+
+/* Estilos para el botón del formulario */
+.boton-formulario {
+  padding: 10px 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  border: 0 !important;
+  outline: 0 !important;
+  background: rgba(167, 139, 250);
+  color: white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Estilos para el botón del formulario cuando está presionado */
+.boton-formulario:active {
+  box-shadow: none;
+}
+
+/* Estilos para la etiqueta de registro (texto inferior) */
+.etiqueta-registro {
+  margin: 0;
+  font-size: 10px;
+  color: #747474;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* Estilos para el enlace de registro (texto "Iniciar sesión") */
+.enlace-registro {
+  margin-left: 1px;
+  font-size: 11px;
+  text-decoration: underline;
+  text-decoration-color: rgba(167, 139, 250);
+  color: rgba(167, 139, 250);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+/* Estilos para el contenedor de botones (Apple y Google) */
+.contenedor-botones {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+/* Estilos para el botón de inicio de sesión con Apple */
+.boton-apple,
+.boton-google {
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 11px;
+  gap: 5px;
+}
+
+/* Estilos para el botón de inicio de sesión con Apple */
+.boton-apple {
+  border: 2px solid white;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Estilos para el botón de inicio de sesión con Google */
+.boton-google {
+  border: 2px solid white;
+  color: white;
+}
+
+/* Estilos para los iconos de Apple y Google */
+.icono-apple,
+.icono-google {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 1px;
+}
+
+.carrito {
+  margin-top: 20vh;
+  text-align: center;
+  background-color: rgba(167, 139, 250);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  padding: 12rem;
+  color: black;
+  font-weight: 900;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button{
+  font-weight: 600;
+  border: solid 2px black;
+  background-color: rgba(167, 139, 250);
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: rgba(167, 139, 250);
+}
